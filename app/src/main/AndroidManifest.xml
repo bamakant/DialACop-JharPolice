@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kiusoftech.dialacop_jharpolice">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/dialacoplogo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".EmergencyActivity"
+            android:label="@string/emergency_contacts" />
+        <activity
+            android:name=".PoliceStationActivity"
+            android:label="@string/polic_station_contacts" />
+        <activity
+            android:name=".ImportantActivity"
+            android:label="@string/important_contacts" />
+        <activity
+            android:name=".StationContactDetailsActivity"
+            android:label="Contact Details" />
+        <activity android:name=".LocationDetailsActivity"
+            android:label="Contact Details"></activity>
+    </application>
+
+</manifest>

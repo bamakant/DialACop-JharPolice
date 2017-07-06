@@ -1,0 +1,815 @@
+<resources>
+    <string name="app_name">Dial A Cop JharPolice</string>
+    <string name="dial100">Dial 100</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="polic_station_contacts">Police Station Contacts</string>
+    <string name="important_contacts">Important Contacts</string>
+
+    <string-array name="chooseDistrict">
+        <item>Choose District</item>
+        <item>Bokaro</item>
+        <item>Dhanbad</item>
+        <item>Ranchi</item>
+        <item>Dumka</item>
+        <item>Garhwa</item>
+        <item>Chatra</item>
+        <item>Deoghar</item>
+        <item>Hazaribagh</item>
+        <item>Jamtara</item>
+        <item>Khunti</item>
+        <item>Giridih</item>
+        <item>Godda</item>
+        <item>Gumla</item>
+        <item>Pakur</item>
+        <item>Palamu</item>
+        <item>Ramgarh</item>
+        <item>Koderma</item>
+        <item>Latehar</item>
+        <item>Lohardaga</item>
+        <item>Simdega</item>
+        <item>East Singhbhum</item>
+        <item>West Singhbhum</item>
+        <item>Sahibganj</item>
+        <item>Saraikela</item>
+    </string-array>
+
+    <string-array name="bokaro_district_police_stations">
+        <item>oc sc-st</item>
+        <item>oc penk narayanpur</item>
+        <item>oc jageswar vihar</item>
+        <item>oc chattrochati</item>
+        <item>balidih biyada op</item>
+        <item>b.t.p.s. ps</item>
+        <item>gandhinagar ps</item>
+        <item>mahuatand ps</item>
+        <item>tenughat op</item>
+        <item>mahila ps</item>
+        <item>bhojudih ps</item>
+        <item>sector-6 ps</item>
+        <item>bokaro jharia op</item>
+        <item>bermo ps</item>
+        <item>petarwar ps</item>
+        <item>amlabad op</item>
+        <item>bangaria op</item>
+        <item>barmasia op</item>
+        <item>b.s. city ps</item>
+        <item>chas ps</item>
+        <item>siyaljory ps</item>
+        <item>sector-12 ps</item>
+        <item>marafari ps</item>
+        <item>i.e.l. ps</item>
+        <item>nawadih ps</item>
+        <item>pindrajora ps</item>
+        <item>sector-4 ps</item>
+        <item>harla ps</item>
+        <item>chas (m) ps</item>
+        <item>chandankiyari ps</item>
+        <item>gomia ps</item>
+        <item>lalpania op</item>
+        <item>jaridih ps</item>
+        <item>kasmar ps</item>
+        <item>kathara op</item>
+        <item>balidih ps</item>
+        <item>dugdha ps</item>
+        <item>chandrapura ps</item>
+
+    </string-array>
+
+    <string-array name="chatra_police_stations">
+        <item>sadar ps</item>
+        <item>simariya ps</item>
+        <item>lawalong ps</item>
+        <item>rajpur ps</item>
+        <item>gidhaur ps</item>
+        <item>piparwar ps</item>
+        <item>tandwa ps</item>
+        <item>pratappur</item>
+        <item>pathalgadda</item>
+        <item>kunda ps</item>
+        <item>itkhori ps</item>
+        <item>hunterganj ps</item>
+        <item>bashishtnagar ps (jori)</item>
+    </string-array>
+
+    <string-array name="deoghar_police_stations">
+        <item>margomunda ps</item>
+        <item>devipur ps</item>
+        <item>babamandir ps</item>
+        <item>mahila ps</item>
+        <item>chitra ps</item>
+        <item>palajori ps</item>
+        <item>sarth ps</item>
+        <item>karoon ps</item>
+        <item>madhupur ps</item>
+        <item>sonaraydhari ps</item>
+        <item>sarwa ps</item>
+        <item>mohanpur ps</item>
+        <item>town ps (deoghar)</item>
+        <item>kunda ps (deoghar)</item>
+        <item>jasidih ps</item>
+    </string-array>
+
+    <string-array name="dhanbad_police_stations">
+        <item>ghanuadih op</item>
+        <item>gonudih op</item>
+        <item>kharkhari op</item>
+        <item>bhatdih op</item>
+        <item>traffic ps</item>
+        <item>borragarh op</item>
+        <item>angar pathira op</item>
+        <item>east basuriya op</item>
+        <item>purbi tundi ps</item>
+        <item>maniyadih ps</item>
+        <item>chirkunda ps</item>
+        <item>dhanuadih op</item>
+        <item>lodna op</item>
+        <item>munidih op</item>
+        <item>bhagabandh op</item>
+        <item>goushala op</item>
+        <item>bhuli op</item>
+        <item>maithan op</item>
+        <item>pancheat op</item>
+        <item>galfarbari op</item>
+        <item>dharmabandh op</item>
+        <item>ramkanali op</item>
+        <item>sonardih op</item>
+        <item>tisra ps</item>
+        <item>mahuda ps</item>
+        <item>madhuban ps</item>
+        <item>kenduadih ps</item>
+        <item>bankmore ps</item>
+        <item>bhonra op</item>
+        <item>saraidhela ps</item>
+        <item>jogta ps</item>
+        <item>loyabod ps</item>
+        <item>putki ps</item>
+        <item>dhansar ps</item>
+        <item>kumardhubi op</item>
+        <item>nirsa ps</item>
+        <item>patherdih ps</item>
+        <item>sudamdih ps</item>
+        <item>alakhadiha op</item>
+        <item>jorapokhar ps</item>
+        <item>baliapur ps</item>
+        <item>sindri ps</item>
+        <item>tetulmari ps</item>
+        <item>barora ps</item>
+        <item>rajganj op</item>
+        <item>katras ps</item>
+        <item>baghmara ps</item>
+        <item>hariharpur ps</item>
+        <item>topchanchi ps</item>
+        <item>barwadda ps</item>
+        <item>tundi ps</item>
+        <item>govindpur ps</item>
+
+    </string-array>
+
+    <string-array name="dumka_police_stations">
+        <item>muffassil ps</item>
+        <item>shikaripara ps</item>
+        <item>town ps</item>
+        <item>gopikandar ps</item>
+        <item>kathikund ps</item>
+        <item>saraiya hat ps</item>
+        <item>jama ps</item>
+        <item>raneshwar ps</item>
+        <item>masliya ps</item>
+        <item>tongra ps</item>
+        <item>jarmundih ps</item>
+        <item>ramgarh ps (dumka)</item>
+        <item>hansdiha ps</item>
+        <item>taljhari ps</item>
+        <item>masanjor op</item>
+    </string-array>
+
+    <string-array name="eastsinghbhum_police_stations">
+        <item>galudih</item>
+        <item>mango ps</item>
+        <item>sonari ps</item>
+        <item>burmamines ps</item>
+        <item>kadma ps</item>
+        <item>parsudih ps</item>
+        <item>sspur</item>
+        <item>sundarnagar ps</item>
+        <item>birsanagar ps</item>
+        <item>govindpur ps (jsr)</item>
+        <item>boram</item>
+        <item>azadnagar ps</item>
+        <item>telco</item>
+        <item>jugsalai ps</item>
+        <item>sidhgora ps</item>
+        <item>sitaramdera ps</item>
+        <item>golmuri ps</item>
+        <item>olidih op</item>
+        <item>moubhandar op</item>
+        <item>dhalbhumgarh ps</item>
+        <item>bahragora ps</item>
+        <item>bagbera</item>
+        <item>ghatshila ps</item>
+        <item>dumaria ps</item>
+        <item>potka ps</item>
+        <item>gurubanda ps</item>
+        <item>jadugora ps</item>
+        <item>chakulia</item>
+        <item>kamalpur</item>
+        <item>musabani</item>
+        <item>patamda ps</item>
+        <item>barsol ps</item>
+        <item>mgm ps</item>
+        <item>sakchi ps</item>
+        <item>bistupur ps</item>
+    </string-array>
+
+    <string-array name="garhwa_police_stations">
+        <item>mahila thana</item>
+        <item>bardiha</item>
+        <item>bishunpura</item>
+        <item>ketar</item>
+        <item>danda</item>
+        <item>bhandaria ps</item>
+        <item>nagar untari ps</item>
+        <item>hariharpur op</item>
+        <item>kharondih ps</item>
+        <item>ramna ps</item>
+        <item>dandai ps</item>
+        <item>ramkanda ps</item>
+        <item>chinia ps</item>
+        <item>dhurki ps</item>
+        <item>manjhion ps</item>
+        <item>bhawnathpur ps</item>
+        <item>meral ps</item>
+        <item>kandi ps</item>
+        <item>ranka ps</item>
+        <item>garhwa ps</item>
+    </string-array>
+
+    <string-array name="giridih_police_stations">
+        <item>navdiha op</item>
+        <item>parsan op</item>
+        <item>madhuban op</item>
+        <item>khukhra</item>
+        <item>dumri ps</item>
+        <item>town ps (giridih)</item>
+        <item>lokai nayanpur ps</item>
+        <item>taratand ps</item>
+        <item>bhelwaghati ps</item>
+        <item>deori ps</item>
+        <item>gawan ps</item>
+        <item>tisri ps</item>
+        <item>pirtand ps</item>
+        <item>nimiaghat ps</item>
+        <item>birni ps</item>
+        <item>bagodar ps</item>
+        <item>sariya ps</item>
+        <item>dhanwar ps</item>
+        <item>hirodih ps</item>
+        <item>jamua ps</item>
+        <item>bengabad ps</item>
+        <item>ahilyapur ps</item>
+        <item>gandey ps</item>
+        <item>muffasil ps</item>
+    </string-array>
+
+    <string-array name="godda_police_stations">
+        <item>rajabhitha</item>
+        <item>hanwara ps</item>
+        <item>boarijore ps</item>
+        <item>belbadda ps</item>
+        <item>mahagama ps</item>
+        <item>poraiyahat ps</item>
+        <item>muffasil ps (godda)</item>
+        <item>town ps (godda)</item>
+        <item>thakur gangti ps</item>
+        <item>meharma ps</item>
+        <item>lalmatia ps</item>
+        <item>basantrai op</item>
+        <item>pathargama ps</item>
+        <item>deodand ps</item>
+        <item>dunderpahari ps</item>
+    </string-array>
+
+    <string-array name="gumla_police_stations">
+        <item>sisai ps</item>
+        <item>basia ps</item>
+        <item>gumla ps</item>
+        <item>raidih ps</item>
+        <item>palkot ps</item>
+        <item>kamdara ps</item>
+        <item>ghaghra ps</item>
+        <item>dumri ps (gumla)</item>
+        <item>chainpur ps</item>
+        <item>bharno ps</item>
+        <item>bishunpur ps</item>
+    </string-array>
+
+    <string-array name="hazaribagh_police_stations">
+        <item>fire brigade</item>
+        <item>daru ps</item>
+        <item>mahila thana n sc-st thana</item>
+        <item>tatijhariya ps</item>
+        <item>bishnugarh ps</item>
+        <item>urimari op</item>
+        <item>ichak ps</item>
+        <item>churchu ps</item>
+        <item>charhi ps</item>
+        <item>giddi ps</item>
+        <item>padma op</item>
+        <item>chauparan ps</item>
+        <item>gorhar ps</item>
+        <item>barkatha ps</item>
+        <item>barhi ps</item>
+        <item>keredari ps</item>
+        <item>barkagaon ps</item>
+        <item>katkamsandi ps</item>
+        <item>pelawal op</item>
+        <item>sadar ps (hazaribagh)</item>
+        <item>muffasil ps (hazaribagh)</item>
+    </string-array>
+
+    <string-array name="jamtara_police_stations">
+        <item>mahila ps-sc-st ps</item>
+        <item>karmatar ps</item>
+        <item>fatehpur ps</item>
+        <item>bagdheri ps</item>
+        <item>bindapathar ps</item>
+        <item>mihijam ps</item>
+        <item>nala ps</item>
+        <item>kundhit ps</item>
+        <item>narayanpur ps</item>
+        <item>jamtara ps</item>
+    </string-array>
+
+    <string-array name="khunti_police_stations">
+        <item>tapakara op</item>
+        <item>karra ps</item>
+        <item>rania ps</item>
+        <item>torpa ps</item>
+        <item>arki ps</item>
+        <item>khunti ps</item>
+        <item>murhu ps</item>
+    </string-array>
+
+    <string-array name="koderma_police_stations">
+        <item>koderma ps</item>
+        <item>tilaiya ps</item>
+        <item>tealiya dam op</item>
+        <item>chandwara op</item>
+        <item>domchanchi op</item>
+        <item>jainagar ps</item>
+        <item>satgawan ps</item>
+        <item>markacho ps</item>
+    </string-array>
+
+    <string-array name="latehar_police_stations0">
+        <item>mahila ps (latehar)</item>
+        <item>bareshandh</item>
+        <item>chhipadohar</item>
+        <item>herhanj ps</item>
+        <item>manika ps</item>
+        <item>latehar ps</item>
+        <item>netarhat ps</item>
+        <item>mahuadand ps</item>
+        <item>garu ps</item>
+        <item>barwadih ps</item>
+        <item>balumath ps</item>
+        <item>chandwa ps</item>
+    </string-array>
+
+    <string-array name="lohardaga_police_stations">
+        <item>st-sc-ahtu</item>
+        <item>serendag</item>
+        <item>bagru</item>
+        <item>mahila ps (lohardaga)</item>
+        <item>bhandra ps</item>
+        <item>kairo ps</item>
+        <item>kuru ps</item>
+        <item>jowang ps</item>
+        <item>kisko ps</item>
+        <item>lohardaga ps</item>
+        <item>sehna ps</item>
+    </string-array>
+
+    <string-array name="pakur_police_stations">
+        <item>sc-st ps</item>
+        <item>malpahari op</item>
+        <item>mahila ps (pakur)</item>
+        <item>raddipur op</item>
+        <item>pakuria ps</item>
+        <item>kittipara ps</item>
+        <item>hiranpur ps</item>
+        <item>town ps (pakur)</item>
+        <item>pakur ps</item>
+        <item>muffasil ps (pakur)</item>
+        <item>amrapadha ps</item>
+        <item>maheshpur ps</item>
+    </string-array>
+
+    <string-array name="palamu_police_stations">
+        <item>town ps (palamu)</item>
+        <item>sadar ps (palamu)</item>
+        <item>padwa ps</item>
+        <item>pipratand ps</item>
+        <item>pandu ps</item>
+        <item>ramgarh ps (palamu)</item>
+        <item>deori op</item>
+        <item>satbarwa op</item>
+        <item>terhashi ps</item>
+        <item>manatu ps</item>
+        <item>paton ps</item>
+        <item>panki ps</item>
+        <item>mmohammadganj ps</item>
+        <item>haidernagar ps</item>
+        <item>hussainbad ps</item>
+        <item>chattarpur ps</item>
+        <item>hariharganj ps</item>
+        <item>rehla ps</item>
+        <item>nawdiha ps</item>
+        <item>bisrampur ps</item>
+        <item>chainpur ps (palamu)</item>
+        <item>lesliganj ps</item>
+    </string-array>
+
+    <string-array name="ramgarh_police_stations">
+        <item>bhadani nagar op</item>
+        <item>west bokaro op</item>
+        <item>bhurkunda ps</item>
+        <item>kijju op</item>
+        <item>mandu ps</item>
+        <item>rajrappa ps</item>
+        <item>basal ps</item>
+        <item>barkakana op</item>
+        <item>ramgarh ps</item>
+        <item>patratu ps</item>
+        <item>gola ps</item>
+    </string-array>
+
+    <string-array name="ranchi_police_stations">
+        <item>tupudana op</item>
+        <item>tamar ps</item>
+        <item>pandra op</item>
+        <item>mackluskiganj ps</item>
+        <item>gonda ps</item>
+        <item>pundag ps</item>
+        <item>bit mesta op</item>
+        <item>rahe op</item>
+        <item>muri op</item>
+        <item>narkopi ps</item>
+        <item>nagri ps</item>
+        <item>mahila ps (ranchi)</item>
+        <item>burmu ps</item>
+        <item>sc-st ps (ranchi)</item>
+        <item>traffic ps (ranchi)</item>
+        <item>tatisilway ps</item>
+        <item>silli ps</item>
+        <item>sikidiri ps</item>
+        <item>sadar ps (ranchi)</item>
+        <item>angara ps</item>
+        <item>mandar ps</item>
+        <item>lapung ps</item>
+        <item>lalpur ps</item>
+        <item>kotwali ps</item>
+        <item>kanke ps</item>
+        <item>etki ps</item>
+        <item>dhurwa ps</item>
+        <item>daily market ps</item>
+        <item>chanho ps</item>
+        <item>bundu ps</item>
+        <item>argora ps</item>
+        <item>khelari ps</item>
+        <item>bero ps</item>
+        <item>pithoria ps</item>
+        <item>ratu ps</item>
+        <item>sonahatu ps</item>
+        <item>oramanjhi ps</item>
+        <item>namkum ps</item>
+        <item>jagnnathpur ps</item>
+        <item>hindipiri ps</item>
+        <item>chutia ps</item>
+        <item>lower bazar ps</item>
+        <item>bariyatu ps</item>
+        <item>sukhdeo nagar ps</item>
+        <item>doranda ps</item>
+    </string-array>
+
+    <string-array name="sahibganj_police_stations">
+        <item>zirwabari op</item>
+        <item>barhet ps</item>
+        <item>borio ps</item>
+        <item>muffasil ps (sahibganj)</item>
+        <item>town ps (sahibganj)</item>
+        <item>kotalpokhar ps</item>
+        <item>barharwa ps</item>
+        <item>ranga ps</item>
+        <item>radhanagar ps</item>
+        <item>taljhari ps (sahibganj)</item>
+        <item>raj mahal ps</item>
+        <item>mirzachowki ps</item>
+    </string-array>
+
+    <string-array name="saraikela_police_stations">
+        <item>kapali op</item>
+        <item>adityapur ps</item>
+        <item>tiruldih op</item>
+        <item>humid op</item>
+        <item>amda op</item>
+        <item>r.i.t. ps</item>
+        <item>saraikela ps</item>
+        <item>nimdih ps</item>
+        <item>ichagarh ps</item>
+        <item>chowka ps</item>
+        <item>chandil ps</item>
+        <item>kandra op</item>
+        <item>gamharia ps</item>
+        <item>dalbhanga op</item>
+        <item>kuchai ps</item>
+        <item>kharsawan ps</item>
+        <item>raj nagar ps</item>
+    </string-array>
+
+    <string-array name="simdega_police_stations">
+        <item>bano ps</item>
+        <item>kersai ps</item>
+        <item>mahila ps (simdega)</item>
+        <item>sc-st ps (simdega)</item>
+        <item>kolebira ps</item>
+        <item>bolwa ps</item>
+        <item>simdega ps</item>
+        <item>thetaitangar ps</item>
+        <item>orga ps</item>
+        <item>kurdeg ps</item>
+        <item>jaldega ps</item>
+        <item>girda op</item>
+        <item>bansjhor</item>
+    </string-array>
+
+    <string-array name="west_singhbhum_police_stations">
+        <item>ckp top-3</item>
+        <item>ckp top-2</item>
+        <item>ckp top-1</item>
+        <item>sadar top</item>
+        <item>jetya</item>
+        <item>tebo ps</item>
+        <item>jaraikella ps</item>
+        <item>jamda op</item>
+        <item>chhotanagra ps</item>
+        <item>nowamundi ps</item>
+        <item>kiriburu ps</item>
+        <item>muffasil ps (west singhbhum)</item>
+        <item>sadar ps (west singhbhum)</item>
+        <item>chiriya op</item>
+        <item>tatanagar op</item>
+        <item>chakradharpur ps</item>
+        <item>pandrashali op</item>
+        <item>jhinkpani ps</item>
+        <item>manjhari ps</item>
+        <item>hatgamharia ps</item>
+        <item>majhgaon ps</item>
+        <item>kumardungi ps</item>
+        <item>jaganathpur ps</item>
+        <item>toklo ps</item>
+        <item>goikera ps</item>
+        <item>gua ps</item>
+        <item>sonua ps</item>
+        <item>karaikela ps</item>
+        <item>bandgaon ps</item>
+        <item>manoharpur ps</item>
+    </string-array>
+
+    <string-array name="choose_location">
+        <item>Choose Location</item>
+        <item>Anti Corruption Bureau (A.C.B.)</item>
+        <item>Bokaro Range</item>
+        <item>Chhotanagpur Range</item>
+        <item>CID</item>
+        <item>Dumka Range</item>
+        <item>Hazaribagh Range</item>
+        <item>Home Department</item>
+        <item>Home Guard</item>
+        <item>JAP</item>
+        <item>Jharkhand Jaguar</item>
+        <item>Jharkhand Police Housing Corporation</item>
+        <item>Kolhan Range</item>
+        <item>Palamu Range</item>
+        <item>Police Headquarter</item>
+        <item>Railways</item>
+        <item>SCRB</item>
+        <item>Special Branch</item>
+        <item>Training</item>
+        <item>Wireless</item>
+    </string-array>
+
+    <string-array name="acb_designations">
+        <item>adgp cum chief of acb</item>
+        <item>ig vigilance</item>
+        <item>sp vigilance (1)</item>
+        <item>sp vigilance (2)</item>
+        <item>sp vigilance (3)</item>
+        <item>sp vigilance (4)</item>
+        <item>addl. sp</item>
+    </string-array>
+
+    <string-array name="bokaro_range">
+        <item>dig bokaro</item>
+        <item>ssp dhanbad</item>
+        <item>sp city dhanbad</item>
+        <item>sp rural dhanbad</item>
+        <item>sp bokaro</item>
+    </string-array>
+
+    <string-array name="chhotanagpur_range">
+        <item>dig ranchi</item>
+        <item>ssp ranchi</item>
+        <item>sp ranchi rural</item>
+        <item>sp city ranchi</item>
+        <item>sp traffic ranchi</item>
+        <item>sp lohardaga</item>
+        <item>sp gumla</item>
+        <item>sp simdega</item>
+        <item>sp khunti</item>
+    </string-array>
+
+    <string-array name="cid">
+        <item>addl. d.g. (cid)</item>
+        <item>ig org. crime</item>
+        <item>ig</item>
+        <item>dig cid</item>
+        <item>sp (1)</item>
+        <item>sp (2)</item>
+        <item>sp (3)</item>
+        <item>sp (crime and ops)</item>
+        <item>asp</item>
+    </string-array>
+
+    <string-array name="dumka_range">
+        <item>dig dumka</item>
+        <item>sp dumka</item>
+        <item>sp jamtara</item>
+        <item>sp deoghar</item>
+        <item>sp pakur</item>
+        <item>sp sahebganj</item>
+        <item>sp godda</item>
+    </string-array>
+
+    <string-array name="hazaribagh_range">
+        <item>dig hazaribagh</item>
+        <item>sp hazaribagh</item>
+        <item>sp chatra</item>
+        <item>sp koderma</item>
+        <item>sp giridih</item>
+        <item>sp ramgarh</item>
+    </string-array>
+
+    <string-array name="home_department">
+        <item>chief secretary</item>
+        <item>home secretary</item>
+        <item>spl. secretary</item>
+        <item>joint secretary</item>
+        <item>finance secretary</item>
+        <item>principle secretary to c.m.</item>
+    </string-array>
+
+    <string-array name="home_guard">
+        <item>dg (h.g. and f.s.)</item>
+        <item>dig (h.g. and f.s.)</item>
+        <item>sp hg</item>
+        <item>state fire officer</item>
+    </string-array>
+
+    <string-array name="jap">
+        <item>adg jap (1)</item>
+        <item>adg jap (2)</item>
+        <item>adg jap (3)</item>
+        <item>ig jap</item>
+        <item>dig jap</item>
+        <item>co jap-01</item>
+        <item>co jap-02</item>
+        <item>co jap-03</item>
+        <item>co jap-04</item>
+        <item>co jap-05</item>
+        <item>co jap-06</item>
+        <item>co jap-07</item>
+        <item>co jap-08</item>
+        <item>co jap-09</item>
+        <item>co jap-10</item>
+        <item>co-irb-1 (jamtara)</item>
+        <item>co-irb-2 (musabani)</item>
+        <item>co-irb-3 (chatra)</item>
+        <item>co-irb-4 (latehar)</item>
+        <item>co-irb-5 (gumla)</item>
+        <item>khukri guest house</item>
+        <item>co sisf</item>
+    </string-array>
+
+    <string-array name="jharkhand_jaguar">
+        <item>ig stf</item>
+        <item>dig addl. charge</item>
+        <item>sp stf</item>
+        <item>dy. sp (adm.)</item>
+        <item>sp ops</item>
+        <item>dy. sp (trg.)</item>
+        <item>jj control room</item>
+    </string-array>
+
+    <string-array name="jphc">
+        <item>dg cum md</item>
+        <item>addl. d.g.</item>
+        <item>chief engineer</item>
+        <item>accountant</item>
+    </string-array>
+
+    <string-array name="kolhan_ange">
+        <item>dig chaibasa</item>
+        <item>sp chaibasa</item>
+        <item>ssp jamshedpur</item>
+        <item>sp city jamshedpur</item>
+        <item>sp rural jamshedpur</item>
+        <item>sp saraikela</item>
+    </string-array>
+
+    <string-array name="palamu_range">
+        <item>dig palamu</item>
+        <item>sp palamu</item>
+        <item>sp latehar</item>
+        <item>sp garhwa</item>
+    </string-array>
+
+    <string-array name="police_headquater">
+        <item>dgp</item>
+        <item>addl. d.g. (hq)</item>
+        <item>addl. d.g. (trg and mod)</item>
+        <item>addl. d.g. (ops)</item>
+        <item>ig (hq)</item>
+        <item>ig training</item>
+        <item>ig (prov.)</item>
+        <item>ig (ops)</item>
+        <item>ig (hr)</item>
+        <item>dig (budget)</item>
+        <item>ig (p)</item>
+        <item>aig cum spl assistant to dgp</item>
+        <item>supervisor ciat school</item>
+        <item>director fsl</item>
+        <item>sysp. security mantralaya</item>
+        <item>dy. sp (h.q.r.t.)</item>
+        <item>sgt. major hq</item>
+        <item>dg control room</item>
+        <item>khukri kutir</item>
+        <item>data centre</item>
+        <item>web support</item>
+    </string-array>
+
+    <string-array name="railways">
+        <item>addl. dg railway</item>
+        <item>ig railway</item>
+        <item>dig railway</item>
+        <item>srp ranchi</item>
+        <item>srp jamshedpur</item>
+        <item>srp dhanbad</item>
+        <item>grp hatia</item>
+        <item>grp ranchi</item>
+        <item>grp bokaro</item>
+    </string-array>
+
+    <string-array name="scrb">
+        <item>dig scrb</item>
+        <item>sp scrb</item>
+    </string-array>
+
+    <string-array name="special_branch">
+        <item>addl. d.g. sb</item>
+        <item>ig sb</item>
+        <item>dig sb</item>
+        <item>sp (estt)</item>
+        <item>sp (n)</item>
+        <item>sp (cm security)</item>
+        <item>dy. sp (tech)-01</item>
+        <item>dy. sp (tech)-02</item>
+        <item>dy. sp control</item>
+        <item>dy. sp raj bhawan</item>
+        <item>dy. sp cm security</item>
+        <item>dy. sp (sb)</item>
+        <item>sgt. major</item>
+        <item>sb control room</item>
+        <item>state control room</item>
+        <item>project building</item>
+    </string-array>
+
+    <string-array name="training">
+        <item>addl. d.g. (training and mod)</item>
+        <item>ig, training</item>
+        <item>director jharkhand police academy</item>
+        <item>dig jungle warfare school</item>
+        <item>sp japtc (1)</item>
+        <item>sp japtc (2)</item>
+        <item>principle tts</item>
+        <item>sp jwf school</item>
+        <item>dy. sp training</item>
+    </string-array>
+
+    <string-array name="wireless">
+        <item>dig (wireless)</item>
+        <item>sp (wireless)</item>
+        <item>addl. sp (wireless)</item>
+    </string-array>
+
+</resources>

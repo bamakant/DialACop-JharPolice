@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/police_station_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pindrajora ps"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="16dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/emergency_child_layout"
+        android:elevation="7dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        >
+    </ListView>
+</LinearLayout>
