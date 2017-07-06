@@ -1,0 +1,2 @@
+# DialACop-JharPolice
+A small initiative to connect people of jharkhand state with jharkhand police and different defense organisations. This application contails all contact details of each districts police stations from all over the jharkhand state and differen officers from diffrent departments like CID, CBI, Home Guard, Jharkhand Jaguar etc. Users can directly make a call to respective contacts from the app.
