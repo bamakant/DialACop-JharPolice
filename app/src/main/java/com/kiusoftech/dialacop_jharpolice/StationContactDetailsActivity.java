@@ -5,8 +5,12 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.WindowDecorActionBar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -20,18 +24,26 @@ import java.util.ArrayList;
 public class StationContactDetailsActivity extends AppCompatActivity {
 
     String policeStation;
-    TextView policeStationtextView;
+    TextView policeStationtextView,phoneText,mobileText;
     ArrayList<StationContactData> stationContactDatas;
     ListView listView;
+    Button shareButton;
+    Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_layout);
 
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         policeStation = getIntent().getExtras().getString("PoliceStationName");
 
         policeStationtextView = (TextView) findViewById(R.id.police_station_textview);
+        shareButton = (Button) findViewById(R.id.share_contact_button);
 
         policeStationtextView.setText(policeStation);
 
@@ -587,7 +599,7 @@ public class StationContactDetailsActivity extends AppCompatActivity {
             case "hariharpur op":
                 stationContactDatas.add(new StationContactData("N.A.", "09939046270"));
                 break;
-            case "kharondi ps":
+            case "kharondih ps":
                 stationContactDatas.add(new StationContactData("N.A.", "09934336920"));
                 break;
             case "ramna ps":
@@ -1546,5 +1558,71 @@ public class StationContactDetailsActivity extends AppCompatActivity {
         StationContactDataAdapter dataAdapter = new StationContactDataAdapter(StationContactDetailsActivity.this, stationContactDatas);
         listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(dataAdapter);
-    }}
+
+        View v = dataAdapter.getView(0, null, listView);
+
+        //Toast.makeText(StationContactDetailsActivity.this,phoneText.getText(),Toast.LENGTH_SHORT).show();
+            phoneText = (TextView) v.findViewById(R.id.station_phone_number_textview);
+            mobileText = (TextView) v.findViewById(R.id.station_mobile_number_textview);
+            //Log.d ("Text", tx.getText().toString());
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Police Station : " + policeStation + "\n Phone No : " + phoneText.getText().toString() + "\n Mobile No : " + mobileText.getText().toString());
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Contact Sharing");
+                startActivity(Intent.createChooser(intent, "Share Contact"));
+            }
+        });
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //for back button and option menu item click event
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            case R.id.exit:
+                this.finishAffinity();
+                return true;
+            case R.id.help:
+                Intent i = new Intent(StationContactDetailsActivity.this,HelpActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.share:
+                intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "Check out this App of Jharkhand Police, A small initiative to connect people of jharkhand state with jharkhand police.\n" +
+                        "https://play.google.com/store/apps/details?id=com.kiusoftech.dialacop_jharpolice");
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Check out this Apps!");
+                startActivity(Intent.createChooser(intent, "Share"));
+                return true;
+            case R.id.feedback:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+                intent.putExtra(Intent.EXTRA_TEXT, "Write your suggestion please.\n");
+                startActivity(intent);
+                return true;
+            case R.id.rateapp:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.kiusoftech.dialacop_jharpolice")));
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}
 

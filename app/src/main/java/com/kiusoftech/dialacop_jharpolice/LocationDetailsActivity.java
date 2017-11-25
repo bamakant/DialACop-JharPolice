@@ -1,8 +1,15 @@
 package com.kiusoftech.dialacop_jharpolice;
 
+import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.ViewPropertyAnimatorCompatSet;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,6 +21,8 @@ public class LocationDetailsActivity extends AppCompatActivity {
     TextView policeStationtextView;
     ArrayList<LocationData> locationDatas;
     ListView listView;
+    Button shareButton;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,12 @@ public class LocationDetailsActivity extends AppCompatActivity {
         designation = getIntent().getExtras().getString("designation");
         policeStationtextView = (TextView) findViewById(R.id.police_station_textview);
         policeStationtextView.setText(designation);
+
+        shareButton = (Button) findViewById(R.id.share_contact_button);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         locationDatas = new ArrayList<>();
 
@@ -577,5 +592,73 @@ public class LocationDetailsActivity extends AppCompatActivity {
         LocationDataAdapter dataAdapter = new LocationDataAdapter(LocationDetailsActivity.this,locationDatas);
         listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(dataAdapter);
+
+        View v = dataAdapter.getView(0, null, listView);
+
+
+        final TextView PersonName = (TextView) v.findViewById(R.id.personName_TextView);
+        final TextView MobileNo = (TextView) v.findViewById(R.id.location_mobile_textview);
+        final TextView OfficeNo = (TextView) v.findViewById(R.id.location_officeno_textview);
+        final TextView ResidenceNo = (TextView) v.findViewById(R.id.location_residenceno_textview);
+        final TextView FaxNo = (TextView) v.findViewById(R.id.location_faxno_textview);
+        final TextView Email = (TextView) v.findViewById(R.id.location_email_textview);
+
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Designation : " + designation + "\n Name : " + PersonName.getText().toString() + "\n Mobile No : " + MobileNo.getText().toString() + "\n Office No : " + OfficeNo.getText().toString() + "\n Residence No : " + ResidenceNo.getText().toString() + "\n Fax No : "+ FaxNo.getText().toString() + "\n Email ID : "+ Email.getText().toString());
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Contact Sharing");
+                startActivity(Intent.createChooser(intent, "Share Contact"));
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //for back button and option menu item click event
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            case R.id.exit:
+                this.finishAffinity();
+                return true;
+            case R.id.help:
+                Intent i = new Intent(LocationDetailsActivity.this,HelpActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.share:
+                intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "Check out this App of Jharkhand Police, A small initiative to connect people of jharkhand state with jharkhand police.\n" +
+                        "https://play.google.com/store/apps/details?id=com.kiusoftech.dialacop_jharpolice");
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Check out this Apps!");
+                startActivity(Intent.createChooser(intent, "Share"));
+                return true;
+            case R.id.feedback:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+                intent.putExtra(Intent.EXTRA_TEXT, "Write your suggestion please.\n");
+                startActivity(intent);
+                return true;
+            case R.id.rateapp:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.kiusoftech.dialacop_jharpolice")));
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

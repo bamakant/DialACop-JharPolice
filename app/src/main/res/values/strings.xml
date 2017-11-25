@@ -568,7 +568,7 @@
         <item>kumardungi ps</item>
         <item>jaganathpur ps</item>
         <item>toklo ps</item>
-        <item>goikera ps</item>
+        <item>goilkera ps</item>
         <item>gua ps</item>
         <item>sonua ps</item>
         <item>karaikela ps</item>
@@ -577,7 +577,7 @@
     </string-array>
 
     <string-array name="choose_location">
-        <item>Choose Location</item>
+        <item>Choose Department</item>
         <item>Anti Corruption Bureau (A.C.B.)</item>
         <item>Bokaro Range</item>
         <item>Chhotanagpur Range</item>
@@ -811,5 +811,11 @@
         <item>sp (wireless)</item>
         <item>addl. sp (wireless)</item>
     </string-array>
+
+    <string name="title_activity_about_app">About</string>
+    <string name="dummy_button">close</string>
+    <string name="dummy_content">.</string>
+
+    <string name="homeAdsUnit">ca-app-pub-8605617979923403/</string>
 
 </resources>

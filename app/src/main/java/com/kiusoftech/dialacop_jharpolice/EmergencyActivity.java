@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -16,6 +18,11 @@ public class EmergencyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         //@ Anti corruption bureau click event
         linearLayout = (LinearLayout) findViewById(R.id.anticorp_linearlayout);
@@ -114,5 +121,50 @@ public class EmergencyActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    //for back button and option menu item click event
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            case R.id.exit:
+                this.finishAffinity();
+                return true;
+            case R.id.help:
+                Intent i = new Intent(EmergencyActivity.this,HelpActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.share:
+                intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, "Check out this App of Jharkhand Police, A small initiative to connect people of jharkhand state with jharkhand police.\n" +
+                        "https://play.google.com/store/apps/details?id=com.kiusoftech.dialacop_jharpolice");
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Check out this Apps!");
+                startActivity(Intent.createChooser(intent, "Share"));
+                return true;
+            case R.id.feedback:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+                intent.putExtra(Intent.EXTRA_TEXT, "Write your suggestion please.\n");
+                startActivity(intent);
+                return true;
+            case R.id.rateapp:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.kiusoftech.dialacop_jharpolice")));
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

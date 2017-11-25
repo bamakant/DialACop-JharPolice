@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
+
     <TextView
         android:id="@+id/police_station_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/emergency_child_layout"
+        android:elevation="7dp"
+        android:padding="16dp"
         android:text="Pindrajora ps"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:padding="16dp"
-        android:layout_marginBottom="7dp"
-        android:background="@drawable/emergency_child_layout"
-        android:elevation="7dp"/>
+        android:textColor="@color/colorPrimaryDark" />
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:divider="@null"
-        android:dividerHeight="0dp"
-        >
+        android:dividerHeight="0dp">
     </ListView>
+
+    <Button
+        android:visibility="visible"
+        android:id="@+id/share_contact_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@android:color/holo_blue_dark"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:text="Share Contact"
+        android:textColor="@android:color/white" />
 </LinearLayout>

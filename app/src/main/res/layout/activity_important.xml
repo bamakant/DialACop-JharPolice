@@ -15,7 +15,12 @@
         android:background="@drawable/emergency_child_layout"
         android:elevation="7dp"
         />
-
+    <ImageView
+        android:id="@+id/topdirImage"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/topdir"/>
     <ListView
         android:id="@+id/location_listview"
         android:layout_width="match_parent"

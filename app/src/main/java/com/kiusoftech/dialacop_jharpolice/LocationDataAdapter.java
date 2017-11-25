@@ -66,7 +66,7 @@ public class LocationDataAdapter extends ArrayAdapter<LocationData> {
                     getContext().startActivity(intent);
 
                 }else {
-                    Toast.makeText(getContext(),"Number is not available",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Mobile Number is not available",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -81,7 +81,7 @@ public class LocationDataAdapter extends ArrayAdapter<LocationData> {
                     getContext().startActivity(intent);
 
                 }else {
-                    Toast.makeText(getContext(),"Number is not available",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Office Number is not available",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -96,7 +96,7 @@ public class LocationDataAdapter extends ArrayAdapter<LocationData> {
                     getContext().startActivity(intent);
 
                 }else {
-                    Toast.makeText(getContext(),"Number is not available",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Residence Number is not available",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -121,12 +121,10 @@ public class LocationDataAdapter extends ArrayAdapter<LocationData> {
             public void onClick(View v) {
 
                 if(nEmail.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+.+[a-z]+")){
-                    intent = new Intent(Intent.ACTION_SEND);
-                    intent.setType("text/plain");
-                    intent.putExtra(Intent.EXTRA_EMAIL, nEmail.getText());
-                    intent.putExtra(Intent.EXTRA_SUBJECT, "Please mention your subject here.");
-                    intent.putExtra(Intent.EXTRA_TEXT, "start writing your mail from here.");
-                    getContext().startActivity(Intent.createChooser(intent, "Send Email"));
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + nEmail.getText()));
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Your Subject here please");
+                    intent.putExtra(Intent.EXTRA_TEXT, "Start writing from here.");
+                    getContext().startActivity(intent);
 
                 }else {
                     Toast.makeText(getContext(),"Email ID is not available",Toast.LENGTH_SHORT).show();
