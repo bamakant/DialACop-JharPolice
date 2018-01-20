@@ -1,23 +1,19 @@
-package com.kiusoftech.dialacop_jharpolice;
+package com.kiusoftech.dialacop_jharpolice.activity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.WindowDecorActionBar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.kiusoftech.dialacop_jharpolice.R;
+import com.kiusoftech.dialacop_jharpolice.ModelClass.StationContactData;
+import com.kiusoftech.dialacop_jharpolice.adapter.StationContactDataAdapter;
 
 import java.util.ArrayList;
 
@@ -1571,7 +1567,7 @@ public class StationContactDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Police Station : " + policeStation + "\n Phone No : " + phoneText.getText().toString() + "\n Mobile No : " + mobileText.getText().toString());
+                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Police Station : " + policeStation + "\nPhone No : " + phoneText.getText().toString() + "\nMobile No : " + mobileText.getText().toString() + "\nDownload the app now\nhttps://play.google.com/store/apps/details?id=com.kiusoftech.dialacop_jharpolice");
                 intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Contact Sharing");
                 startActivity(Intent.createChooser(intent, "Share Contact"));
             }

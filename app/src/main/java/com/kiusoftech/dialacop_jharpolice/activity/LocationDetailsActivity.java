@@ -1,17 +1,19 @@
-package com.kiusoftech.dialacop_jharpolice;
+package com.kiusoftech.dialacop_jharpolice.activity;
 
 import android.content.Intent;
-import android.location.Location;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.ViewPropertyAnimatorCompatSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.kiusoftech.dialacop_jharpolice.adapter.LocationDataAdapter;
+import com.kiusoftech.dialacop_jharpolice.ModelClass.LocationData;
+import com.kiusoftech.dialacop_jharpolice.R;
 
 import java.util.ArrayList;
 
@@ -21,7 +23,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
     TextView policeStationtextView;
     ArrayList<LocationData> locationDatas;
     ListView listView;
-    Button shareButton;
+    private Button shareButton,makeFavoriteButton;
     Intent intent;
 
     @Override
@@ -30,9 +32,11 @@ public class LocationDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.list_layout);
         designation = getIntent().getExtras().getString("designation");
         policeStationtextView = (TextView) findViewById(R.id.police_station_textview);
+
         policeStationtextView.setText(designation);
 
         shareButton = (Button) findViewById(R.id.share_contact_button);
+        makeFavoriteButton = findViewById(R.id.make_favorite_button);
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
@@ -609,11 +613,22 @@ public class LocationDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Designation : " + designation + "\n Name : " + PersonName.getText().toString() + "\n Mobile No : " + MobileNo.getText().toString() + "\n Office No : " + OfficeNo.getText().toString() + "\n Residence No : " + ResidenceNo.getText().toString() + "\n Fax No : "+ FaxNo.getText().toString() + "\n Email ID : "+ Email.getText().toString());
+                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Designation : " + designation + "\n Name : " + PersonName.getText().toString() + "\n Mobile No : " + MobileNo.getText().toString() + "\n Office No : " + OfficeNo.getText().toString() + "\n Residence No : " + ResidenceNo.getText().toString() + "\n Fax No : "+ FaxNo.getText().toString() + "\n Email ID : "+ Email.getText().toString() + "\nDownload the app now :\nhttps://play.google.com/store/apps/details?id=com.kiusoftech.dialacop_jharpolice");
                 intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Contact Sharing");
                 startActivity(Intent.createChooser(intent, "Share Contact"));
             }
         });
+
+        makeFavoriteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                makeLocationFav();
+            }
+        });
+
+    }
+
+    private void makeLocationFav() {
 
     }
 

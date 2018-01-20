@@ -1,0 +1,93 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kiusoftech.dialacop_jharpolice.fragment.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                style="@style/home_frame_layout"
+                android:id="@+id/dial100_frame"
+                android:layout_marginTop="@dimen/frameMargin"
+                android:layout_marginLeft="@dimen/frameMargin"
+                android:layout_marginRight="@dimen/frameMargin"
+                android:elevation="10dp"
+                android:background="@drawable/home_content_background">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+                    <TextView
+                        style="@style/home_frame_textViews"
+                        android:text="@string/dial100"
+                        android:layout_weight=".75" />
+                    <ImageView
+                        android:layout_weight=".25"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_margin="10dp"
+                        android:padding="5dp"
+                        android:src="@drawable/phone_call"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/home_frame_layout"
+                android:id="@+id/emergency_frame"
+                android:elevation="10dp"
+                android:layout_marginTop="@dimen/frameMargin"
+                android:layout_marginLeft="@dimen/frameMargin"
+                android:layout_marginRight="@dimen/frameMargin"
+                android:background="@drawable/home_content_background2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emergency_contacts"
+                    android:elevation="16dp"
+                    android:textAlignment="center"
+                    style="@style/home_frame_textViews"/>
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/home_frame_layout"
+                android:id="@+id/police_station_frame"
+                android:elevation="10dp"
+                android:layout_marginTop="@dimen/frameMargin"
+                android:layout_marginLeft="@dimen/frameMargin"
+                android:layout_marginRight="@dimen/frameMargin"
+                android:background="@drawable/home_content_background">
+                <TextView
+                    style="@style/home_frame_textViews"
+                    android:textAlignment="center"
+                    android:elevation="16dp"
+                    android:text="@string/polic_station_contacts"/>
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/home_frame_layout"
+                android:id="@+id/importent_contact_frame"
+                android:elevation="10dp"
+                android:layout_marginTop="@dimen/frameMargin"
+                android:layout_marginLeft="@dimen/frameMargin"
+                android:layout_marginRight="@dimen/frameMargin"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/home_content_background2">
+                <TextView
+                    android:text="@string/important_contacts"
+                    android:textAlignment="center"
+                    android:elevation="16dp"
+                    style="@style/home_frame_textViews"/>
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

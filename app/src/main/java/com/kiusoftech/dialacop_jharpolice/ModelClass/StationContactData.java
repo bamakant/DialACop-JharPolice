@@ -1,4 +1,4 @@
-package com.kiusoftech.dialacop_jharpolice;
+package com.kiusoftech.dialacop_jharpolice.ModelClass;
 
 /**
  * Created by bamakantkar on 21/6/17.

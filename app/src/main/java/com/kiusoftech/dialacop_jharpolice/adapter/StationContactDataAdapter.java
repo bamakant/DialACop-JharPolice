@@ -1,4 +1,4 @@
-package com.kiusoftech.dialacop_jharpolice;
+package com.kiusoftech.dialacop_jharpolice.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.kiusoftech.dialacop_jharpolice.ModelClass.StationContactData;
+import com.kiusoftech.dialacop_jharpolice.R;
 
 import java.util.ArrayList;
 

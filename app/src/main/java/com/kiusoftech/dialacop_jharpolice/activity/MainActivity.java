@@ -1,4 +1,4 @@
-package com.kiusoftech.dialacop_jharpolice;
+package com.kiusoftech.dialacop_jharpolice.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -17,7 +17,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-import com.google.android.gms.ads.reward.mediation.MediationRewardedVideoAdListener;
+import com.kiusoftech.dialacop_jharpolice.R;
 
 public class MainActivity extends AppCompatActivity  {
 

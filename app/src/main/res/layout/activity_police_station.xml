@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.kiusoftech.dialacop_jharpolice.PoliceStationActivity">
+    tools:context="com.kiusoftech.dialacop_jharpolice.activity.PoliceStationActivity">
     <Spinner
         android:id="@+id/choose_district_spinner"
         android:layout_width="match_parent"

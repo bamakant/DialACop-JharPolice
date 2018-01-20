@@ -1,4 +1,4 @@
-package com.kiusoftech.dialacop_jharpolice;
+package com.kiusoftech.dialacop_jharpolice.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.kiusoftech.dialacop_jharpolice.R;
 
 public class EmergencyActivity extends AppCompatActivity {
 

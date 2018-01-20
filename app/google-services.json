@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "350773226457",
+    "firebase_url": "https://jharkhand-police.firebaseio.com",
+    "project_id": "jharkhand-police",
+    "storage_bucket": "jharkhand-police.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350773226457:android:5fbc4f9c17ba5e2e",
+        "android_client_info": {
+          "package_name": "com.kiusoftech.dialacop_jharpolice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350773226457-pm3fll33vnf4tqndqrjcdp3adjsloc9u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuJzMpN_DlQ3PyDRxMT1ncr3jOIQZwFjg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

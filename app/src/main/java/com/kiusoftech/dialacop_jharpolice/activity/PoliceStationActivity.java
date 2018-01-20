@@ -1,9 +1,7 @@
-package com.kiusoftech.dialacop_jharpolice;
+package com.kiusoftech.dialacop_jharpolice.activity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
-import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,13 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-
-import java.util.Collections;
-import java.util.List;
+import com.kiusoftech.dialacop_jharpolice.R;
 
 public class PoliceStationActivity extends AppCompatActivity {
 

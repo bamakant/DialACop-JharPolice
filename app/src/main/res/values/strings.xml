@@ -817,5 +817,12 @@
     <string name="dummy_content">.</string>
 
     <string name="homeAdsUnit">ca-app-pub-8605617979923403/</string>
+    <string name="title_activity_home">Dial A Cop JharPolice</string>
+    <string name="title_home">Home</string>
+    <string name="title_nearby">Near By</string>
+    <string name="title_favorite">Favorite</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
