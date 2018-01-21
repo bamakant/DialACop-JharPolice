@@ -1,9 +1,9 @@
-package com.kiusoftech.dialacop_jharpolice.ModelClass;
+package com.kiusoftech.dialacop_jharpolice.Pojo;
 
 /**
  * Created by bamakantkar on 23/6/17.
  */
-public class LocationData {
+public class ImportantData {
 
     private String mPersonName;
     private String mMobileNo;
@@ -12,7 +12,7 @@ public class LocationData {
     private String mFaxNo;
     private String mEmail;
 
-    public LocationData(String PersonName,String MobileNo, String OfficeNo,String ResidenceNo, String FaxNo, String Email){
+    public ImportantData(String PersonName, String MobileNo, String OfficeNo, String ResidenceNo, String FaxNo, String Email){
 
         mPersonName = PersonName;
         mMobileNo = MobileNo;

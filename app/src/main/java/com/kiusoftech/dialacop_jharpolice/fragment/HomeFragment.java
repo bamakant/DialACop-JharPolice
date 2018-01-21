@@ -67,7 +67,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        //@ Important contact frame touch event hadler
+        //@ FavoriteEntity contact frame touch event hadler
 
         frameLayout= (FrameLayout) rootView.findViewById(R.id.importent_contact_frame);
         frameLayout.setOnClickListener(new View.OnClickListener() {

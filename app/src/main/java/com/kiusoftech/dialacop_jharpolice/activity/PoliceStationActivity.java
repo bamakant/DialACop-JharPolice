@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.google.android.gms.ads.AdRequest;
@@ -27,6 +28,7 @@ public class PoliceStationActivity extends AppCompatActivity {
     ArrayAdapter<String> policeStationAdapter;
     ImageView imageView;
     private InterstitialAd mInterstitialAd;
+    private RelativeLayout police_station_relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class PoliceStationActivity extends AppCompatActivity {
 
         listView=(ListView) findViewById(R.id.district_listview);
         imageView = (ImageView) findViewById(R.id.topdirImage);
+        police_station_relativeLayout = findViewById(R.id.police_station_no_data);
+
         // Spinner for selecting district name
 
         final Spinner chooseDistrictSpinner = (Spinner) findViewById(R.id.choose_district_spinner);
@@ -68,10 +72,10 @@ public class PoliceStationActivity extends AppCompatActivity {
                 switch (districtName){
 
                     case "Choose District":
-                        imageView.setVisibility(View.VISIBLE);
+                        police_station_relativeLayout.setVisibility(View.VISIBLE);
                         break;
                     case "Bokaro":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.bokaro_district_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -83,7 +87,7 @@ public class PoliceStationActivity extends AppCompatActivity {
 
                                 // pass station name as intent to another activity
 
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
 
@@ -91,7 +95,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                         });
                         break;
                     case "Dhanbad":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.dhanbad_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -102,14 +106,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 ps=(String) parent.getItemAtPosition(position);
 
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Ranchi":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.ranchi_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -119,14 +123,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Dumka":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.dumka_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -137,14 +141,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 ps=(String) parent.getItemAtPosition(position);
 
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Garhwa":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.garhwa_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -155,7 +159,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 ps=(String) parent.getItemAtPosition(position);
 
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
 
@@ -163,7 +167,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                         });
                         break;
                     case "Chatra":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.chatra_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -174,7 +178,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 ps=(String) parent.getItemAtPosition(position);
 
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
 
@@ -182,7 +186,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                         });
                         break;
                     case "Deoghar":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.deoghar_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -192,7 +196,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
 
@@ -200,7 +204,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                         });
                         break;
                     case "Hazaribagh":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.hazaribagh_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -210,14 +214,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Jamtara":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.jamtara_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -227,7 +231,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
 
@@ -235,7 +239,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                         });
                         break;
                     case "Khunti":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.khunti_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -245,7 +249,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
 
@@ -253,7 +257,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                         });
                         break;
                     case "Giridih":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.giridih_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -263,14 +267,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Godda":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.godda_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -280,14 +284,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Gumla":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.gumla_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -297,14 +301,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Pakur":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.pakur_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -314,14 +318,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Palamu":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.palamu_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -331,14 +335,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Ramgarh":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.ramgarh_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -348,14 +352,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Koderma":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.koderma_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -365,14 +369,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Latehar":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.latehar_police_stations0);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -382,14 +386,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Lohardaga":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.lohardaga_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -399,14 +403,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Simdega":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.simdega_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -416,14 +420,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "East Singhbhum":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.eastsinghbhum_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -433,14 +437,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "West Singhbhum":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.west_singhbhum_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -450,14 +454,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Sahibganj":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.sahibganj_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -467,14 +471,14 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Saraikela":
-                        imageView.setVisibility(View.GONE);
+                        police_station_relativeLayout.setVisibility(View.GONE);
                         policeStationString=getResources().getStringArray(R.array.saraikela_police_stations);
                         policeStationAdapter=new ArrayAdapter<String>(PoliceStationActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, policeStationString);
                         listView.setAdapter(policeStationAdapter);
@@ -484,7 +488,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                                 // on click handler for individual police stations
                                 ps=(String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(PoliceStationActivity.this,StationContactDetailsActivity.class);
+                                intent = new Intent(PoliceStationActivity.this,PoliceStationDetailsActivity.class);
                                 intent.putExtra("PoliceStationName",ps);
                                 startActivity(intent);
                             }

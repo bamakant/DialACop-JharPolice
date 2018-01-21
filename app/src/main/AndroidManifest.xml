@@ -24,10 +24,10 @@
             android:name=".activity.ImportantActivity"
             android:label="@string/important_contacts" />
         <activity
-            android:name=".activity.StationContactDetailsActivity"
+            android:name=".activity.PoliceStationDetailsActivity"
             android:label="Contact Details" />
         <activity
-            android:name=".activity.LocationDetailsActivity"
+            android:name=".activity.ImportantDetailsActivity"
             android:label="Contact Details" />
         <activity
             android:name=".activity.HelpActivity"

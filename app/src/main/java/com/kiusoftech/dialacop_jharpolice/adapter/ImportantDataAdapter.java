@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kiusoftech.dialacop_jharpolice.ModelClass.LocationData;
+import com.kiusoftech.dialacop_jharpolice.Pojo.ImportantData;
 import com.kiusoftech.dialacop_jharpolice.R;
 
 import java.util.ArrayList;
@@ -19,18 +19,18 @@ import java.util.ArrayList;
 /**
  * Created by bamakantkar on 23/6/17.
  */
-public class LocationDataAdapter extends ArrayAdapter<LocationData> {
+public class ImportantDataAdapter extends ArrayAdapter<ImportantData> {
 
     Intent intent;
 
-    public LocationDataAdapter(Activity context, ArrayList<LocationData> locationDatas){
-        super(context,0,locationDatas);
+    public ImportantDataAdapter(Activity context, ArrayList<ImportantData> importantData){
+        super(context,0, importantData);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LocationData currentLocationData = getItem(position);
+        ImportantData currentImportantData = getItem(position);
 
         if(convertView==null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_location_details,parent,false);
@@ -50,12 +50,12 @@ public class LocationDataAdapter extends ArrayAdapter<LocationData> {
         LinearLayout emaillinearLayout = (LinearLayout) convertView.findViewById(R.id.location_email_linearLayout);
 
 
-        nPersonName.setText(currentLocationData.getmPersonName());
-        nMobileNo.setText(currentLocationData.getmMobileNo());
-        nOfficeNo.setText(currentLocationData.getmOfficeNo());
-        nResidenceNo.setText(currentLocationData.getmResidenceNo());
-        nFaxNo.setText(currentLocationData.getmFaxNo());
-        nEmail.setText(currentLocationData.getmEmail());
+        nPersonName.setText(currentImportantData.getmPersonName());
+        nMobileNo.setText(currentImportantData.getmMobileNo());
+        nOfficeNo.setText(currentImportantData.getmOfficeNo());
+        nResidenceNo.setText(currentImportantData.getmResidenceNo());
+        nFaxNo.setText(currentImportantData.getmFaxNo());
+        nEmail.setText(currentImportantData.getmEmail());
 
         mobilenolinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kiusoftech.dialacop_jharpolice.ModelClass.StationContactData;
+import com.kiusoftech.dialacop_jharpolice.Pojo.PoliceStationData;
 import com.kiusoftech.dialacop_jharpolice.R;
 
 import java.util.ArrayList;
@@ -19,18 +19,18 @@ import java.util.ArrayList;
 /**
  * Created by bamakantkar on 21/6/17.
  */
-public class StationContactDataAdapter extends ArrayAdapter<StationContactData> {
+public class PoliceStationDataAdapter extends ArrayAdapter<PoliceStationData> {
 
     Intent intent;
 
-    public StationContactDataAdapter(Activity context, ArrayList<StationContactData> stationContactDatas){
-        super(context,0,stationContactDatas);
+    public PoliceStationDataAdapter(Activity context, ArrayList<PoliceStationData> policeStationData){
+        super(context,0, policeStationData);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        StationContactData currentStationData = getItem(position);
+        PoliceStationData currentStationData = getItem(position);
 
         if(convertView==null){
             convertView= LayoutInflater.from(getContext()).inflate(R.layout.activity_station_contact_details,parent,false);

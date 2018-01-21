@@ -1,14 +1,14 @@
-package com.kiusoftech.dialacop_jharpolice.ModelClass;
+package com.kiusoftech.dialacop_jharpolice.Pojo;
 
 /**
  * Created by bamakantkar on 21/6/17.
  */
-public class StationContactData {
+public class PoliceStationData {
 
     private String mStationContactPhone;
     private String mStationContactMobile;
 
-    public StationContactData(String StationContactPhone,String StationContactMobile){
+    public PoliceStationData(String StationContactPhone, String StationContactMobile){
 
         mStationContactPhone = StationContactPhone;
         mStationContactMobile = StationContactMobile;

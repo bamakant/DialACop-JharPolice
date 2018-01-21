@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.google.android.gms.ads.AdRequest;
@@ -20,14 +21,16 @@ import com.kiusoftech.dialacop_jharpolice.R;
 
 public class ImportantActivity extends AppCompatActivity {
 
-    ListView listView;
-    String location,designation;
-    Intent intent;
-    Spinner locationSpinner;
-    String[] locationString;
-    ArrayAdapter<String> locationAdapter;
-    ImageView imageView;
+    private ListView listView;
+    private String location;
+    private String designation;
+    private Intent intent;
+    private Spinner locationSpinner;
+    private String[] locationString;
+    private ArrayAdapter<String> locationAdapter;
+    private ImageView imageView;
     private InterstitialAd mInterstitialAd;
+    private RelativeLayout importantRelativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +49,10 @@ public class ImportantActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.location_listview);
         locationSpinner = (Spinner) findViewById(R.id.choose_location_spinner);
         imageView = (ImageView) findViewById(R.id.topdirImage);
+        importantRelativeLayout = findViewById(R.id.important_activity_no_data);
 
         //@ loading string array on spinner as array adapter
-        ArrayAdapter<CharSequence> chooseLocationAdapter = ArrayAdapter.createFromResource(this,R.array.choose_location, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> chooseLocationAdapter = ArrayAdapter.createFromResource(this, R.array.choose_location, android.R.layout.simple_spinner_item);
         chooseLocationAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
 
         locationSpinner.setAdapter(chooseLocationAdapter);
@@ -59,331 +63,330 @@ public class ImportantActivity extends AppCompatActivity {
 
                 location = parent.getItemAtPosition(position).toString();
 
-
-                switch (location){
+                switch (location) {
 
                     case "Choose Department":
-                        imageView.setVisibility(View.VISIBLE);
+                        importantRelativeLayout.setVisibility(View.VISIBLE);
                         break;
                     case "Anti Corruption Bureau (A.C.B.)":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.acb_designations);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.acb_designations);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Bokaro Range":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.bokaro_range);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.bokaro_range);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Chhotanagpur Range":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.chhotanagpur_range);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.chhotanagpur_range);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "CID":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.cid);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.cid);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Dumka Range":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.dumka_range);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.dumka_range);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Hazaribagh Range":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.hazaribagh_range);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.hazaribagh_range);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Home Department":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.home_department);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.home_department);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Home Guard":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.home_guard);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.home_guard);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "JAP":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.jap);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.jap);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Jharkhand Jaguar":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.jharkhand_jaguar);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.jharkhand_jaguar);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Jharkhand Police Housing Corporation":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.jphc);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.jphc);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Kolhan Range":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.kolhan_ange);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.kolhan_ange);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Palamu Range":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.palamu_range);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.palamu_range);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Police Headquarter":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.police_headquater);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.police_headquater);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Railways":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.railways);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.railways);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "SCRB":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.scrb);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.scrb);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Special Branch":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.special_branch);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.special_branch);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Training":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.training);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.training);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
                         break;
                     case "Wireless":
-                        imageView.setVisibility(View.GONE);
-                        locationString=getResources().getStringArray(R.array.wireless);
-                        locationAdapter=new ArrayAdapter<String>(ImportantActivity.this,R.layout.simple_list_layout,R.id.simpleListTextView, locationString);
+                        importantRelativeLayout.setVisibility(View.GONE);
+                        locationString = getResources().getStringArray(R.array.wireless);
+                        locationAdapter = new ArrayAdapter<String>(ImportantActivity.this, R.layout.simple_list_layout, R.id.simpleListTextView, locationString);
                         listView.setAdapter(locationAdapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // on click handler for individual police stations
-                                designation=(String) parent.getItemAtPosition(position);
+                                designation = (String) parent.getItemAtPosition(position);
                                 // pass station name as intent to another activity
-                                intent = new Intent(ImportantActivity.this,LocationDetailsActivity.class);
-                                intent.putExtra("designation",designation);
+                                intent = new Intent(ImportantActivity.this, ImportantDetailsActivity.class);
+                                intent.putExtra("designation", designation);
                                 startActivity(intent);
                             }
                         });
@@ -391,6 +394,7 @@ public class ImportantActivity extends AppCompatActivity {
                 }
 
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -402,7 +406,7 @@ public class ImportantActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main,menu);
+        getMenuInflater().inflate(R.menu.main, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -419,7 +423,7 @@ public class ImportantActivity extends AppCompatActivity {
                 this.finishAffinity();
                 return true;
             case R.id.help:
-                Intent i = new Intent(ImportantActivity.this,HelpActivity.class);
+                Intent i = new Intent(ImportantActivity.this, HelpActivity.class);
                 startActivity(i);
                 return true;
             case R.id.share:
@@ -443,11 +447,12 @@ public class ImportantActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     protected void onPause() {
-        if(mInterstitialAd.isLoaded()){
+        if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
-        }else Log.d("TAG", "The Ad is not loaded.");
+        } else Log.d("TAG", "The Ad is not loaded.");
         super.onPause();
     }
 }
