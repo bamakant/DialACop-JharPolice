@@ -98,7 +98,7 @@ public class FavoriteItemAdapter extends RecyclerView.Adapter<FavoriteItemAdapte
                 new AlertDialog.Builder(context)
                         .setTitle(current.getFavoriteItemTitle().toUpperCase())
                         .setMessage("Do you really want to delete?")
-                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setIcon(R.drawable.fail)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -120,7 +120,8 @@ public class FavoriteItemAdapter extends RecyclerView.Adapter<FavoriteItemAdapte
                                     }
                                 }.execute();
 
-                            }})
+                            }
+                        })
                         .setNegativeButton("No", null).show();
 
 

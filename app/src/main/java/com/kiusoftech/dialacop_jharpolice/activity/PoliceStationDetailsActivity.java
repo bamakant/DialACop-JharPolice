@@ -14,7 +14,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.FirebaseApiNotAvailableException;
 import com.kiusoftech.dialacop_jharpolice.R;
 import com.kiusoftech.dialacop_jharpolice.Pojo.PoliceStationData;
 import com.kiusoftech.dialacop_jharpolice.adapter.PoliceStationDataAdapter;
@@ -1668,7 +1667,7 @@ public class PoliceStationDetailsActivity extends AppCompatActivity {
                 this.finishAffinity();
                 return true;
             case R.id.help:
-                Intent i = new Intent(PoliceStationDetailsActivity.this,HelpActivity.class);
+                Intent i = new Intent(PoliceStationDetailsActivity.this,AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.share:

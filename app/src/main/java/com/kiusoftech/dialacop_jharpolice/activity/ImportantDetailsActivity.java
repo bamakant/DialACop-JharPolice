@@ -717,7 +717,7 @@ public class ImportantDetailsActivity extends AppCompatActivity {
                 this.finishAffinity();
                 return true;
             case R.id.help:
-                Intent i = new Intent(ImportantDetailsActivity.this,HelpActivity.class);
+                Intent i = new Intent(ImportantDetailsActivity.this,AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.share:

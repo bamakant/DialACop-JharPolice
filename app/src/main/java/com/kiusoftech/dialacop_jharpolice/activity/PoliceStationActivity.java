@@ -524,7 +524,7 @@ public class PoliceStationActivity extends AppCompatActivity {
                 this.finishAffinity();
                 return true;
             case R.id.help:
-                Intent i = new Intent(PoliceStationActivity.this,HelpActivity.class);
+                Intent i = new Intent(PoliceStationActivity.this,AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.share:

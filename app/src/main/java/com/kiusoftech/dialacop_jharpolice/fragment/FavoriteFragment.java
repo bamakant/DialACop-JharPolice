@@ -30,7 +30,7 @@ public class FavoriteFragment extends Fragment {
     private FavoriteItemAdapter favoriteItemAdapter;
     List<FavoriteEntity> favoriteList;
 
-    private static final String TAG = "Kiu";
+    private static final String TAG = "kant";
 
     ImageView favoriteEmptyImage;
     TextView favoriteEmptyText;

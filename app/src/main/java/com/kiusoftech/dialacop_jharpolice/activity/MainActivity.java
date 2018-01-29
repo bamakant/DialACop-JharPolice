@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity  {
             return true;
         }
         else if(id==R.id.help){
-            Intent i = new Intent(MainActivity.this,HelpActivity.class);
+            Intent i = new Intent(MainActivity.this,AboutActivity.class);
             startActivity(i);
         }
         else if(id==R.id.feedback){

@@ -8,7 +8,6 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
         android:id="@+id/favorite_fragment_recyclerView">
     </android.support.v7.widget.RecyclerView>
     <ImageView

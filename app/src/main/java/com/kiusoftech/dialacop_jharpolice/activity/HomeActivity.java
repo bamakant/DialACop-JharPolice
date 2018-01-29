@@ -9,7 +9,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.kiusoftech.dialacop_jharpolice.R;
 import com.kiusoftech.dialacop_jharpolice.fragment.FavoriteFragment;
@@ -97,7 +96,7 @@ private Intent intent;
             return true;
         }
         else if(id==R.id.help){
-            Intent i = new Intent(getApplicationContext(),HelpActivity.class);
+            Intent i = new Intent(getApplicationContext(),AboutActivity.class);
             startActivity(i);
         }
         else if(id==R.id.feedback){

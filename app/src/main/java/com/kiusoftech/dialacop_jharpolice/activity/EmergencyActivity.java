@@ -145,7 +145,7 @@ public class EmergencyActivity extends AppCompatActivity {
                 this.finishAffinity();
                 return true;
             case R.id.help:
-                Intent i = new Intent(EmergencyActivity.this,HelpActivity.class);
+                Intent i = new Intent(EmergencyActivity.this,AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.share:
