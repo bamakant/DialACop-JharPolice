@@ -155,10 +155,6 @@ public class NearByFragment extends Fragment implements
         //@linking list view
         nearBystationsListView = rootView.findViewById(R.id.nearByListView);
 
-        //@Checking internet connection is there on not
-        ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo active = cm.getActiveNetworkInfo();
-        isNetworkAvailable = active != null && active.isConnectedOrConnecting();
 
         // calling background Async task to load Google Places
         // After getting places from Google all the data is shown in listview
