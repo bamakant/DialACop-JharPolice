@@ -5,49 +5,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.kiusoftech.dialacop_jharpolice.activity.PoliceStationActivity">
+
     <Spinner
         android:id="@+id/choose_district_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textAlignment="center"
         android:layout_marginBottom="7dp"
         android:background="@drawable/emergency_child_layout"
         android:elevation="7dp"
-        />
-<RelativeLayout
-    android:id="@+id/police_station_no_data"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:visibility="gone">
-    <ImageView
-        android:id="@+id/topdirImage"
-        android:visibility="visible"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:src="@drawable/topdir"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:padding="16dp"
+        android:textAlignment="center" />
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/police_station_no_data"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_below="@id/topdirImage"
-        android:textAlignment="center"
-        android:text="Please choose district from Top !!!"
-        android:textAppearance="@android:style/TextAppearance.Holo.Widget.TextView"
-        android:textColor="@android:color/holo_red_light"
-        android:textStyle="bold"
-        android:textSize="18sp"/>
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/topdirImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:src="@drawable/topdir"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topdirImage"
+            android:layout_marginTop="12dp"
+            android:text="Please choose district from Top !!!"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Holo.Widget.TextView"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/district_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@null"
-        android:dividerHeight="0dp">
-    </ListView>
+        android:dividerHeight="0dp"/>
 
 </LinearLayout>

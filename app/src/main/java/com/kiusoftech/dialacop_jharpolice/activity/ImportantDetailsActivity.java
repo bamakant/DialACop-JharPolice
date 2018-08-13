@@ -424,7 +424,7 @@ public class ImportantDetailsActivity extends AppCompatActivity {
                 importantData.add(new ImportantData("Shri. Ashutosh Shekhar","09905045056","NA","NA","NA","sprural-dhanbad@jhpolice.gov.in"));
                 break;
             case "sp bokaro":
-                importantData.add(new ImportantData("Shri. Y. S. Ramesh","09431706418","06542242299","06542242266","06542242266","sp-bokaro@jhpolice.gov.in"));
+                importantData.add(new ImportantData("Shri. Kartik S.","09431706418","06542242299","06542242266","06542242266","sp-bokaro@jhpolice.gov.in"));
                 break;
 
             // bokaro range end

@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Dial A Cop JharPolice</string>
+    <string name="app_name">Dial A Cop</string>
     <string name="dial100">Dial 100</string>
     <string name="emergency_contacts">Emergency Contacts</string>
-    <string name="polic_station_contacts">Police Station Contacts</string>
+    <string name="polic_station_contacts">Police Station</string>
     <string name="important_contacts">Important Contacts</string>
 
     <string-array name="chooseDistrict">
@@ -817,7 +817,7 @@
     <string name="dummy_content">.</string>
 
     <string name="homeAdsUnit">ca-app-pub-8605617979923403/</string>
-    <string name="title_activity_home">Dial A Cop JharPolice</string>
+    <string name="title_activity_home">Dial A Cop</string>
     <string name="title_home">Home</string>
     <string name="title_nearby">Near By</string>
     <string name="title_favorite">Favorite</string>

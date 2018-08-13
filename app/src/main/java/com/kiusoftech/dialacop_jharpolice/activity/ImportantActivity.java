@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -405,12 +406,38 @@ public class ImportantActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_with_search, menu);
+        MenuItem searchMenuItem = menu.findItem(R.id.menu_search);
+        if (searchMenuItem == null) {
+            return true;
+        }
+        SearchView searchView = (SearchView) searchMenuItem.getActionView();
+        if (searchView != null) {
+            searchView.setQueryHint("Search ");
+            searchView.setMaxWidth(2129960); // https://stackoverflow.com/questions/18063103/searchview-in-optionsmenu-not-full-width
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String s) {
+                    return false;
+                }
 
-        getMenuInflater().inflate(R.menu.main, menu);
-
+                @Override
+                public boolean onQueryTextChange(String s) {
+                    ImportantActivity.this.onQueryTextChange(s);
+                    return false;
+                }
+            });
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
+    private void onQueryTextChange(String s) {
+        try {
+            locationAdapter.getFilter().filter(s);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     //for back button and option menu item click event
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

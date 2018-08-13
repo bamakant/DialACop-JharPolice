@@ -1,12 +1,18 @@
 package com.kiusoftech.dialacop_jharpolice.activity;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,10 +20,13 @@ import com.kiusoftech.dialacop_jharpolice.R;
 import com.kiusoftech.dialacop_jharpolice.fragment.FavoriteFragment;
 import com.kiusoftech.dialacop_jharpolice.fragment.HomeFragment;
 import com.kiusoftech.dialacop_jharpolice.fragment.NearByFragment;
+import com.kiusoftech.dialacop_jharpolice.utils.ForceUpdateChecker;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity
+implements ForceUpdateChecker.OnUpdateNeededListener{
 
-private Intent intent;
+    private static final String TAG = "kant";
+    private Intent intent;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -37,6 +46,7 @@ private Intent intent;
             return false;
         }
     };
+    private boolean isConnected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +58,59 @@ private Intent intent;
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        //@Checking internet connection is there on not
+        ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo active = cm.getActiveNetworkInfo();
+        isConnected = active != null && active.isConnectedOrConnecting();
+
+
+        if(isConnected) {
+            ForceUpdateChecker.with(this).onUpdateNeeded(this).noUpdateNeeded(this).check();
+            //DONE: Need to add force update feature
+            //goToNextActivity();
+            Log.d(TAG, "onConnected");
+        }
+        else {
+            noUpdateNeeded();
+        }
+
     }
+
+    @Override
+    public void noUpdateNeeded() {
+        Log.d(TAG, "noUpdateNeeded: ");
+    }
+
+    @Override
+    public void onUpdateNeeded(final String updateUrl) {
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setIcon(R.drawable.dialacoplogo)
+                .setTitle("New version available")
+                .setCancelable(false)
+                .setMessage("Please, update app to new version to access full features of this App.")
+                .setPositiveButton("Update",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                redirectStore(updateUrl);
+                                finish();
+                            }
+                        }).setNegativeButton("No, thanks",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        }).create();
+        dialog.show();
+    }
+
+    private void redirectStore(String updateUrl) {
+        final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
 
     private void changeFragment(int position) {
 

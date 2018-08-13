@@ -1566,6 +1566,7 @@ public class PoliceStationDetailsActivity extends AppCompatActivity {
         // loading the listview
         PoliceStationDataAdapter dataAdapter = new PoliceStationDataAdapter(PoliceStationDetailsActivity.this, policeStationData);
         listView = (ListView) findViewById(R.id.list);
+
         listView.setAdapter(dataAdapter);
 
         View v = dataAdapter.getView(0, null, listView);
@@ -1580,7 +1581,12 @@ public class PoliceStationDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Police Station : " + policeStation + "\nPhone No : " + phoneText.getText().toString() + "\nMobile No : " + mobileText.getText().toString() + "\nDownload the app now\nhttps://play.google.com/store/apps/details?id=com.kiusoftech.dialacop_jharpolice");
+                intent.putExtra(Intent.EXTRA_TEXT, "Contact Details:\n Police Station : "
+                        + policeStation + "\nPhone No : "
+                        + phoneText.getText().toString()
+                        + "\nMobile No : "
+                        + mobileText.getText().toString()
+                        + "\nDownload the app now\nhttps://play.google.com/store/apps/details?id=com.kiusoftech.dialacop_jharpolice");
                 intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Contact Sharing");
                 startActivity(Intent.createChooser(intent, "Share Contact"));
             }
