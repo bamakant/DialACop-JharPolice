@@ -2,7 +2,10 @@ package com.kiusoftech.dialacop_jharpolice.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.support.customtabs.CustomTabsIntent;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +13,7 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.kiusoftech.dialacop_jharpolice.R;
 
@@ -39,8 +43,11 @@ public class AboutActivity extends AppCompatActivity {
     private View mContentView;
     private View mControlsView;
     private boolean mVisible;
-    Button close,requestAContact;
+    Button close;
     Intent intent;
+    TextView privacyText;
+    private CustomTabsIntent.Builder builder;
+    private CustomTabsIntent customTabsIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +62,7 @@ public class AboutActivity extends AppCompatActivity {
                 AboutActivity.this.finish();
             }
         });
-        requestAContact = (Button) findViewById(R.id.request_contact);
-
-        requestAContact.setOnClickListener(new View.OnClickListener() {
+        /*requestAContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
@@ -65,8 +70,27 @@ public class AboutActivity extends AppCompatActivity {
                 intent.putExtra(Intent.EXTRA_TEXT, "Write your details and required contact person name or designation and location.\n");
                 startActivity(intent);
             }
-        });
+        });*/
+/**
+ * Chrome custom tabs
+ */
+        builder = new CustomTabsIntent.Builder();
+        builder.setToolbarColor(ResourcesCompat.getColor(getResources(), R.color.colorPrimary, null));
+        builder.setStartAnimations(getApplicationContext(),R.anim.slide_in_right, R.anim.slide_out_left);
+        builder.setExitAnimations(getApplicationContext(), R.anim.slide_in_left, R.anim.slide_out_right);
+        builder.setCloseButtonIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_arrow_back_white_24dp));
+        builder.enableUrlBarHiding();
+        builder.setShowTitle(false);
+        customTabsIntent = builder.build();
 
+        privacyText = findViewById(R.id.privacy_policy_textview);
+
+        privacyText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                customTabsIntent.launchUrl(AboutActivity.this, Uri.parse("https://kiusoftech.blogspot.com/p/dial-cop-jharkhand-police.html"));
+            }
+        });
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);

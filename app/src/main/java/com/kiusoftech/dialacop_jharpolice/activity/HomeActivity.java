@@ -148,6 +148,12 @@ implements ForceUpdateChecker.OnUpdateNeededListener{
             this.finishAffinity();
             return true;
         }
+        else if (id == R.id.request){
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+            intent.putExtra(Intent.EXTRA_TEXT, "Write your details and required contact person name or designation and location.\n");
+            startActivity(intent);
+        }
         else if(id==R.id.share){
             intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");

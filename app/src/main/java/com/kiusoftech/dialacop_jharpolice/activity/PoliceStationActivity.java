@@ -28,18 +28,12 @@ public class PoliceStationActivity extends AppCompatActivity {
     String[] policeStationString;
     ArrayAdapter<String> policeStationAdapter;
     ImageView imageView;
-    private InterstitialAd mInterstitialAd;
     private RelativeLayout police_station_relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_police_station);
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-8605617979923403/2966828372");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -551,6 +545,12 @@ public class PoliceStationActivity extends AppCompatActivity {
             case R.id.exit:
                 this.finishAffinity();
                 return true;
+            case R.id.request:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+                intent.putExtra(Intent.EXTRA_TEXT, "Write your details and required contact person name or designation and location.\n");
+                startActivity(intent);
+                return true;
             case R.id.help:
                 Intent i = new Intent(PoliceStationActivity.this, AboutActivity.class);
                 startActivity(i);
@@ -575,13 +575,5 @@ public class PoliceStationActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onPause() {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else Log.d("TAG", "The Ad is not loaded.");
-        super.onPause();
     }
 }

@@ -23,98 +23,10 @@ public class MainActivity extends AppCompatActivity  {
 
     FrameLayout frameLayout;
     Intent intent;
-    private InterstitialAd mInterstitialAd1,mInterstitialAd2;
-    private RewardedVideoAd mAd;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //@ Ads section
-
-        mInterstitialAd1 = new InterstitialAd(this);
-        mInterstitialAd1.setAdUnitId("ca-app-pub-8605617979923403/4722763177");
-        mInterstitialAd1.loadAd(new AdRequest.Builder().build());
-
-        mInterstitialAd2 = new InterstitialAd(this);
-        mInterstitialAd2.setAdUnitId(getResources().getString(R.string.homeAdsUnit));
-        mInterstitialAd2.loadAd(new AdRequest.Builder().build());
-
-        // Use an activity context to get the rewarded video instance.
-        mAd = MobileAds.getRewardedVideoAdInstance(this);
-        mAd.loadAd("ca-app-pub-8605617979923403/7477753173", new AdRequest.Builder().build());
-
-        mAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
-            @Override
-            public void onRewardedVideoAdLoaded() {
-
-            }
-
-            @Override
-            public void onRewardedVideoAdOpened() {
-
-            }
-
-            @Override
-            public void onRewardedVideoStarted() {
-
-            }
-
-            @Override
-            public void onRewardedVideoAdClosed() {
-
-            }
-
-            @Override
-            public void onRewarded(RewardItem rewardItem) {
-
-            }
-
-            @Override
-            public void onRewardedVideoAdLeftApplication() {
-
-            }
-
-            @Override
-            public void onRewardedVideoAdFailedToLoad(int i) {
-
-            }
-        });
-
-        mInterstitialAd1.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-                Log.i("Ads", "onAdLoaded");
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-                Log.i("Ads", "onAdFailedToLoad");
-            }
-
-            @Override
-            public void onAdOpened() {
-                // Code to be executed when the ad is displayed.
-                Log.i("Ads", "onAdOpened");
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-                Log.i("Ads", "onAdLeftApplication");
-            }
-
-            @Override
-            public void onAdClosed() {
-                // Code to be executed when when the interstitial ad is closed.
-                Log.i("Ads", "onAdClosed");
-            }
-        });
-
-        //@ Ads section end
 
         //@ Dial 100 frame click event handler
 
@@ -187,6 +99,12 @@ public class MainActivity extends AppCompatActivity  {
             this.finishAffinity();
             return true;
         }
+        else if (id == R.id.request){
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+            intent.putExtra(Intent.EXTRA_TEXT, "Write your details and required contact person name or designation and location.\n");
+            startActivity(intent);
+        }
         else if(id==R.id.share){
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
@@ -209,37 +127,6 @@ public class MainActivity extends AppCompatActivity  {
         else if(id==R.id.rateapp){
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.kiusoftech.dialacop_jharpolice")));
         }
-
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onStop() {
-        if(mInterstitialAd1.isLoaded()){
-            mInterstitialAd1.show();
-        }else Log.d("TAG", "The Ad is not loaded.");
-        super.onStop();
-    }
-
-    @Override
-    public void onResume() {
-        if(mInterstitialAd2.isLoaded()){
-            mInterstitialAd2.show();
-        }else Log.d("TAG", "The Ad is not loaded.");
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        mAd.pause(this);
-        super.onPause();
-    }
-
-    @Override
-    public void onDestroy() {
-        if (mAd.isLoaded()) {
-            mAd.show();
-        }
-        super.onDestroy();
     }
 }

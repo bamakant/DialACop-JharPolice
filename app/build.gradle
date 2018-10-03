@@ -7,8 +7,8 @@ android {
         applicationId "com.kiusoftech.dialacop_jharpolice"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.3"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
 
@@ -62,7 +62,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-nearby:11.4.2'
 //for handle crash and ANR and restart automatically
     implementation 'cat.ereza:customactivityoncrash:2.2.0'
-
-
+    //Chrome custom tabs library
+    implementation 'com.android.support:customtabs:27.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

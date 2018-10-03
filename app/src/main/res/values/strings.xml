@@ -824,5 +824,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">About</string>
+    <string name="rate_app">Rate App</string>
+    <string name="share_app">Share App</string>
+    <string name="feedback">Feedback</string>
+    <string name="exit">Exit</string>
+    <string name="disclaimer">DialACop Jharkhand Police Android Application is developed for providing information regarding all contact details of jharkhand state\'s police departments. All contacts available in this application are taken from Jharkhand Police official website http://www.jhpolice.gov.in If anything getting wrong in this application, then please check out the official website too. We will try to keep updated as much we can.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="request_a_contact">Request A Contact</string>
 
 </resources>

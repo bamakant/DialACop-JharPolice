@@ -30,22 +30,15 @@ public class ImportantActivity extends AppCompatActivity {
     private String[] locationString;
     private ArrayAdapter<String> locationAdapter;
     private ImageView imageView;
-    private InterstitialAd mInterstitialAd;
     private RelativeLayout importantRelativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_important);
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-8605617979923403/7397027970");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
 
         listView = (ListView) findViewById(R.id.location_listview);
         locationSpinner = (Spinner) findViewById(R.id.choose_location_spinner);
@@ -438,6 +431,7 @@ public class ImportantActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     //for back button and option menu item click event
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -448,6 +442,12 @@ public class ImportantActivity extends AppCompatActivity {
                 return true;
             case R.id.exit:
                 this.finishAffinity();
+                return true;
+            case R.id.request:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+                intent.putExtra(Intent.EXTRA_TEXT, "Write your details and required contact person name or designation and location.\n");
+                startActivity(intent);
                 return true;
             case R.id.help:
                 Intent i = new Intent(ImportantActivity.this, AboutActivity.class);
@@ -471,15 +471,6 @@ public class ImportantActivity extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.kiusoftech.dialacop_jharpolice")));
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onPause() {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else Log.d("TAG", "The Ad is not loaded.");
-        super.onPause();
     }
 }

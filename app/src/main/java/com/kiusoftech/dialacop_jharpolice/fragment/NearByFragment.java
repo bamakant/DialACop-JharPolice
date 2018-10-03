@@ -56,6 +56,7 @@ import com.kiusoftech.dialacop_jharpolice.rest.Place;
 import com.kiusoftech.dialacop_jharpolice.rest.PlacesList;
 import com.kiusoftech.dialacop_jharpolice.service.LocationUpdatesIntentService;
 import com.kiusoftech.dialacop_jharpolice.utils.AlertDialogManager;
+import com.kiusoftech.dialacop_jharpolice.utils.KiuLibrary;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -85,9 +86,6 @@ public class NearByFragment extends Fragment implements
 
     private static final String TAG = "kant";
     private Intent serviceIntent;
-
-    // flag for Internet connection status
-    Boolean isInternetPresent = false;
 
     // Connection detector class
     // ConnectionDetector cd;
@@ -163,11 +161,9 @@ public class NearByFragment extends Fragment implements
          * check here whether internet is TURNED ON or not, if Internet available then execute next line
          * else ask user to turn ON internet connection.
          */
-        if (isNetworkAvailable) {
+        if (KiuLibrary.isNetworkAvailable(getActivity().getApplicationContext())) {
             loadStations();
-
         } else {
-
             new AlertDialog.Builder(getActivity())
                     .setTitle("Network Error")
                     .setMessage("Internet Connection Not Available.")

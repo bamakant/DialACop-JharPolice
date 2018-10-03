@@ -128,7 +128,7 @@ public class EmergencyActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main,menu);
+        getMenuInflater().inflate(R.menu.main, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -144,8 +144,14 @@ public class EmergencyActivity extends AppCompatActivity {
             case R.id.exit:
                 this.finishAffinity();
                 return true;
+            case R.id.request:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "kiusoftech@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Regarding DialACop Jharkhand police Android App");
+                intent.putExtra(Intent.EXTRA_TEXT, "Write your details and required contact person name or designation and location.\n");
+                startActivity(intent);
+                return true;
             case R.id.help:
-                Intent i = new Intent(EmergencyActivity.this,AboutActivity.class);
+                Intent i = new Intent(EmergencyActivity.this, AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.share:
